@@ -33,7 +33,6 @@ class QuizActivity : AppCompatActivity() {
     var answerD = ""
     var correctAnswer = ""
     var questionCount = 0
-    //var questionNumberr = 1 menjam ovo u nulu jer sad uzimam podatke iz seta, a u njemu je prvi element nulti element
     var questionNumberr = 0
 
     var userAnswer = ""
@@ -168,16 +167,7 @@ class QuizActivity : AppCompatActivity() {
 
                 questionCount = snapshot.childrenCount.toInt()
 
-                if(questionNumberr < questions.size){ //obrisao sam qustionNumber <= qustionCount
-                    //ovo sam iskomentarisao jer je ovo za uzimanje svih pitanja iz baze redom
-//                    question = snapshot.child(questionNumberr.toString()).child("q").value.toString()
-//                    answerA = snapshot.child(questionNumberr.toString()).child("a").value.toString()
-//                    answerB = snapshot.child(questionNumberr.toString()).child("b").value.toString()
-//                    answerC = snapshot.child(questionNumberr.toString()).child("c").value.toString()
-//                    answerD = snapshot.child(questionNumberr.toString()).child("d").value.toString()
-//                    correctAnswer = snapshot.child(questionNumberr.toString()).child("answer").value.toString()
-
-                    //ovo je uzimanje pitanja random kako su formirani u setu
+                if(questionNumberr < questions.size){
                     question = snapshot.child(questions.elementAt(questionNumberr).toString()).child("q").value.toString()
                     answerA = snapshot.child(questions.elementAt(questionNumberr).toString()).child("a").value.toString()
                     answerB = snapshot.child(questions.elementAt(questionNumberr).toString()).child("b").value.toString()
